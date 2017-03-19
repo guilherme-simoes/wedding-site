@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Casamento Déia e Gui - 30 abril 2017</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,600,700" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="nav-wrapper">
+            <nav>
+                <a href="#" class="active">O casamento</a>
+                <a href="local.html">Local</a>
+                <a href="dicas.html">Dicas</a>
+                <a href="https://sites.icasei.com.br/deiaegui/pt_br/store/9/1" target="_blank">Presentes</a>
+            </nav>
+        </div>
+        <div class="wrapper">
+
+            <section class="main-image">
+                <img src="img/casamento_deia_gui.gif" alt="">
+            </section>
+
+            <section>
+                <img src="img/data-hora.gif" alt="">
+            </section>
+
+            <section class="counter-intro">
+                <div class="counter">
+                    <span>Faltam</span>
+                    <span id="countdown"></span>
+                    <span>dias</span>
+                </div>
+                <div class="intro">
+                    <h3>Sim!</h3>
+                    <p>
+                        <span>É o que vocês estão imaginando,</span>
+                        <span>vamos nos casar!</span>
+                        <span>Esse momento não seria o mesmo sem vocês...</span>
+                        <span>Então, marquem essa data na agenda e começem a se preparar...</span>
+                    </p>
+                </div>
+            </section>
+
+            <section class="calendar when">
+                <header>
+                    <h2>Quando?</h2>
+                    <p>O casamento vai ser no dia 30 de abril de 2017. Nesse mês temos vários feriados e o casamento será na véspera do feriado do dia do trabalho (1 de maio).</p>
+                </header>
+                <img src="img/calendar.gif" alt="">
+            </section>
+
+
+            <!--<section class="end">
+                <img src="img/newly-married.gif" alt="">
+            </section>-->
+        </div>
+
+        <script>
+            var end = new Date('04/30/2017 4:00 PM');
+
+                var _second = 1000;
+                var _minute = _second * 60;
+                var _hour = _minute * 60;
+                var _day = _hour * 24;
+                var timer;
+
+                function showRemaining() {
+                    var now = new Date();
+                    var distance = end - now;
+                    if (distance < 0) {
+
+                        clearInterval(timer);
+                        document.getElementById('countdown').innerHTML = 'EXPIRED!';
+
+                        return;
+                    }
+                    var days = Math.floor(distance / _day);
+                    var hours = Math.floor((distance % _day) / _hour);
+                    var minutes = Math.floor((distance % _hour) / _minute);
+                    var seconds = Math.floor((distance % _minute) / _second);
+
+                    document.getElementById('countdown').innerHTML = days;
+                    /*document.getElementById('countdown').innerHTML += hours + 'horas ';
+                    document.getElementById('countdown').innerHTML += minutes + 'minutos ';
+                    document.getElementById('countdown').innerHTML += seconds + 'secundos';*/
+                }
+
+                timer = setInterval(showRemaining, 1000);
+            </script>
+    </body>
+    <script type="text/javascript">
+        $('a').click(function(){
+            $('html, body').animate({
+                scrollTop: $( $(this).attr('href') ).offset().top
+            }, 500);
+            return false;
+        });
+    </script>
+</html>
